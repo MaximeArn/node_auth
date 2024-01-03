@@ -1,4 +1,6 @@
+const AuthenticationError = require("../errors/authError");
 const User = require("../models/user");
+
 module.exports = {
   register: async ({ body: { username, password, email } }, res, next) => {
     try {
@@ -9,8 +11,21 @@ module.exports = {
       next(error);
     }
   },
+
   login: async (req, res, next) => {
+    const { username, password } = req.body;
+
     try {
+      const user = await User.findOne({ username });
+      if (!user) {
+        next(new AuthenticationError("User not found", 404));
+      }
+
+      const passwordMatch = await user.comparePassword(password);
+      if (!passwordMatch) {
+        next(new AuthenticationError("Incorrect password", 401));
+      }
+      res.status(200).json(user);
     } catch (error) {
       next(error);
     }
