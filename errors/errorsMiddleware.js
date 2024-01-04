@@ -8,10 +8,11 @@ const errorsMiddleware = (error, req, res, next) => {
     } else if (error.code === 11000 && error.keyPattern.email) {
       throw new AuthenticationError("L'adresse e-mail est déjà utilisée.", 400);
     } else {
-      next(error);
+      throw error;
     }
   } catch (error) {
-    next(error);
+    res.status(error.statusCode).send(error.message);
+    next();
   }
 };
 module.exports = errorsMiddleware;
