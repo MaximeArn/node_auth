@@ -1,4 +1,5 @@
 const AuthenticationError = require("../errors/authError");
+const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
 module.exports = {
@@ -25,7 +26,11 @@ module.exports = {
       if (!passwordMatch) {
         throw new AuthenticationError("Incorrect password", 401);
       }
-      res.status(200).json(user);
+
+      const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY, {
+        expiresIn: "1h",
+      });
+      res.status(200).json({ token });
     } catch (error) {
       next(error);
     }
