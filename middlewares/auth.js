@@ -3,7 +3,6 @@ const User = require("../models/user");
 const AuthenticationError = require("../errors/authError");
 
 module.exports = async (req, res, next) => {
-  console.log(req.headers.authorization);
   const token = req.headers.authorization?.split(" ")[1];
 
   try {
@@ -14,7 +13,6 @@ module.exports = async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };

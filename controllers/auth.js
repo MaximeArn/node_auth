@@ -18,14 +18,12 @@ module.exports = {
 
     try {
       const user = await User.findOne({ username });
-      if (!user) {
+      if (!user)
         throw new AuthenticationError("User not found : invalid suername", 404);
-      }
 
       const passwordMatch = await user.comparePassword(password);
-      if (!passwordMatch) {
+      if (!passwordMatch)
         throw new AuthenticationError("Incorrect password", 401);
-      }
 
       const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY, {
         expiresIn: "1h",
