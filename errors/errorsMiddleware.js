@@ -1,7 +1,7 @@
 const AuthenticationError = require("./authError");
 
 //TODO: at the end of the project rejactorize this middlewre (maybe map on an object with all the error codes )
-const errorsMiddleware = (error, req, res, next) => {
+module.exports = (error, req, res, next) => {
   try {
     // 11000 is the mongodb code for unique index constraint violation
     if (error.code === 11000 && error.keyPattern.username) {
@@ -31,4 +31,3 @@ const errorsMiddleware = (error, req, res, next) => {
     next();
   }
 };
-module.exports = errorsMiddleware;

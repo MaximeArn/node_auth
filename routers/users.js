@@ -2,7 +2,7 @@ const { Router } = require("express");
 
 const usersRouter = Router();
 
-usersRouter.get("/userInfo", (req, res, next) => {
+usersRouter.get("/profile", (req, res, next) => {
   res.json(req.user);
 });
 
