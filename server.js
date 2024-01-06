@@ -1,9 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const connectDb = require("./db/dbConection");
-const errorsMiddleware = require("./errors/errorsMiddleware");
 const authMiddleware = require("./middlewares/auth");
 const adminsMiddleware = require("./middlewares/admins");
+const errorsMiddleware = require("./middlewares/errorsMiddleware");
+const loggerMiddleware = require("./middlewares/loggerMiddleware");
 const authRouter = require("./routers/auth");
 const usersRouter = require("./routers/users");
 const adminsRouter = require("./routers/admins");
@@ -19,6 +20,7 @@ server.use("/", authMiddleware, usersRouter);
 // routes that needs a admin role to be accessed
 server.use("/admin", adminsMiddleware, adminsRouter);
 server.use(errorsMiddleware);
+server.use(loggerMiddleware);
 
 server.listen(PORT, () => {
   console.log(`server started on port : ${PORT}`);

@@ -28,13 +28,13 @@
 
 - ### Fourth phase :
   - implement a logger system:
-    - [ ] create a logger
-    - [ ] Implement a console transport
-    - [ ] Implement a fs transport
-    - [ ] Rotate files every X days
-    - [ ] create an error structure that contains all the metaData needed in the logs
-    - [ ] handle uncaughtExceptions and uncaughtRejections
-    - [ ] store logs in a centralized service
+    - [x] create a logger
+    - [x] Implement a console transport
+    - [x] Implement a fs transport
+    - [x] Rotate files every X days
+    - [x] create an error structure that contains all the metaData needed in the logs
+    - [x] handle uncaughtExceptions and uncaughtRejections
+    - [x] store logs in a centralized service
     - [ ] add an only admins route that return the log file
 - ### Fifth phase :
   - [ ] write a documentation
