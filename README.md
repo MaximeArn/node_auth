@@ -123,3 +123,12 @@ _Every admin route go first through the users middleware and then the admins mid
   }
 ]
 ```
+
+## How to test : 
+
+server is hosted on this url : 
+
+`https://books-repository-api.onrender.com`
+
+
+
