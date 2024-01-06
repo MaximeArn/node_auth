@@ -74,16 +74,14 @@ _every user route go through the users middleware that check if the auth token i
 
 ```json
 {
-	{
-	"_id": "6597fc85738909dd242ddd84",
-	"username": "john",
-	"email": "john.doe@gmail.com",
-	"password": "$2b$10$I9kCPPf0mVstZPsh8tU7xeQC6DXHXgHuTgkw9mAg43iXSbG3txXGa", //hashed password
-	"role": "user",
-	"createdAt": "2024-01-05T12:56:37.501Z",
-	"updatedAt": "2024-01-05T12:56:37.501Z",
-	"__v": 0
-}
+  "_id": "6597fc85738909dd242ddd84",
+  "username": "john",
+  "email": "john.doe@gmail.com",
+  "password": "$2b$10$I9kCPPf0mVstZPsh8tU7xeQC6DXHXgHuTgkw9mAg43iXSbG3txXGa", //hashed password
+  "role": "user",
+  "createdAt": "2024-01-05T12:56:37.501Z",
+  "updatedAt": "2024-01-05T12:56:37.501Z",
+  "__v": 0
 }
 ```
 
