@@ -35,8 +35,7 @@
     - [x] create an error structure that contains all the metaData needed in the logs
     - [x] handle uncaughtExceptions and uncaughtRejections
     - [x] store logs in a centralized service
-    - [ ] add an only admins route that return the log file
 - ### Fifth phase :
-  - [ ] write a documentation
+  - [x] write a documentation
   - [ ] host it
   - [ ] GOT IT !
