@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const { isEmail } = require("validator");
+const AuthenticationError = require("../errors/authError");
 
 const userSchema = new mongoose.Schema(
   {
@@ -12,6 +14,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+      validate(value) {
+        if (!isEmail(value)) {
+          throw new AuthenticationError("invalid email adress provided", 400);
+        }
+      },
     },
     password: {
       type: String,
