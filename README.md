@@ -130,5 +130,8 @@ server is hosted on this url :
 
 `https://node-auth-a2ym.onrender.com`
 
+Use a an application like Postman or Insomnia to test the different routes and requests.
+
+
 
 
