@@ -37,5 +37,5 @@
     - [x] store logs in a centralized service
 - ### Fifth phase :
   - [x] write a documentation
-  - [ ] host it
-  - [ ] GOT IT !
+  - [x] host it
+  - [x] GOT IT !
